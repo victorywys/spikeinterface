@@ -18,6 +18,7 @@ from .external.tridesclous import TridesclousSorter
 from .external.waveclus import WaveClusSorter
 from .external.waveclus_snippets import WaveClusSnippetsSorter
 from .external.yass import YassSorter
+from .external.simsort import SimSortSorter
 
 # based on spikeinertface.sortingcomponents
 from .internal.spyking_circus2 import Spykingcircus2Sorter
@@ -44,6 +45,7 @@ sorter_full_list = [
     WaveClusSorter,
     WaveClusSnippetsSorter,
     YassSorter,
+    SimSortSorter,  # Add SimSortSorter to the list
     # internal
     Spykingcircus2Sorter,
     Tridesclous2Sorter,
