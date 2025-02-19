@@ -122,7 +122,7 @@ class SimSortSorter(BaseSorter):
             emodel_save_path=str(SIMSORT_PATH / "simsort_pretrained/extractor_bbp_L1-L5-8192/saved_models"),
             n_clusters=params.get("n_clusters"),
             ms_quantile=params.get("ms_quantile"),
-            verbose=params.get("verbose", True)
+            verbose=verbose,
         )
         
         # Run sorting
