@@ -14,14 +14,9 @@ if str(SIMSORT_PATH) not in sys.path:
 import numpy as np
 from spikeinterface import generate
 from spikeinterface.sorters import run_sorter
+import spikeinterface.extractors as se
 
-# Clean up existing test directory
-test_dir = Path('test_simsort')
-if test_dir.exists():
-    import shutil
-    shutil.rmtree(test_dir)
-
-# Generate a synthetic recording
+# Generate a synthetic recording using spikeinterface
 recording, sorting_true = generate.generate_ground_truth_recording(
     num_channels=4,
     sampling_frequency=30000,
@@ -29,12 +24,17 @@ recording, sorting_true = generate.generate_ground_truth_recording(
     num_units=8
 )
 
-# Run SimSort with correct parameters
+# # Use an example .plx recording file to test SimSort
+# recording_file = os.path.join(SIMSORT_PATH, 'custom_data/4chTetrodeDemoPLX.plx')
+# recording = se.PlexonRecordingExtractor(recording_file, stream_name='TETWB')
+
+# Run SimSort with spikeinterface
 sorting = run_sorter(
     'simsort',
     recording,
     folder='test_simsort',
     yaml_path=str(SIMSORT_PATH / 'SimSort.yaml'),
+    remove_existing_folder=True,
     verbose=True,
 )
 

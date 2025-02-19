@@ -56,7 +56,7 @@ class SimSortSorter(BaseSorter):
     }
 
     sorter_description = "SimSort: A deep learning spike sorter"
-    installation_mesg = "SimSort is using the local version from src/spikeinterface/sorters/simsort"
+    installation_mesg = "SimSort is using the local version from src/spikeinterface/sorters/simsortsrc"
 
     @classmethod
     def is_installed(cls):

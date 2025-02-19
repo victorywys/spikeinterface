@@ -18,5 +18,4 @@ class SimSortCommonTestSuite(SorterCommonTestSuite, unittest.TestCase):
     SorterClass = SimSortSorter
 
 if __name__ == '__main__':
-    # Test run, `test` here will be a test case object managed by unittest/pytest
-    pytest.main(["-v", __file__])  # This will let pytest run your tests correctly
+    pytest.main(["-v", __file__])
